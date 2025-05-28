@@ -19,7 +19,8 @@
             } while (string.IsNullOrWhiteSpace(name));
 
             // At this point, name is guaranteed to be non-null and non-whitespace
-            Console.WriteLine($"Hello, {name.ToUpper()}!");
+            Console.WriteLine($"Hello, {name.ToUpper()} !!");
+            //#3 bug fixed with the do while 
         }
     }
 }
