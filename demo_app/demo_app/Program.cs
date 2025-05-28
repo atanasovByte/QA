@@ -20,7 +20,8 @@
 
             // At this point, name is guaranteed to be non-null and non-whitespace
             Console.WriteLine($"Hello, {name.ToUpper()} !!");
-            //#3 bug fixed with the do while 
+            //Solution of issue #3 - added a do while
+            //Fixes #3 - added a do while loop to prevent empty input
         }
     }
 }
