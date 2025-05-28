@@ -4,13 +4,21 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter your name: ");
-            // If the user just presses Enter, ReadLine() returns null at end-of-stream,
-            // or an empty string if input stream is still open—but for the sake of this demo
-            // we’ll assume null to trigger the exception.
-            string name = Console.ReadLine();
+            string name;
 
-            // This call will throw an ArgumentNullException if name is null:
+            // Loop until the user enters a non-empty name
+            do
+            {
+                Console.Write("Enter your name: ");
+                name = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    Console.WriteLine("Error: Name cannot be empty. Please try again.");
+                }
+            } while (string.IsNullOrWhiteSpace(name));
+
+            // At this point, name is guaranteed to be non-null and non-whitespace
             Console.WriteLine($"Hello, {name.ToUpper()}!");
         }
     }
